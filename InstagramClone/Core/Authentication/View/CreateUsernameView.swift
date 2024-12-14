@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct CreateUsernameView: View {
-    @State private var username = ""
+    @EnvironmentObject var viewModel: RegistrationViewModel
     
     var body: some View {
         SignUpView(title: "Create Username",
                    subTitle: "Pick a username for your new account. You can always change it later.",
                    textField: "Enter a username",
-                   text: $username,
+                   text: $viewModel.username,
                    destination: CreatePasswordView())
     }
 }

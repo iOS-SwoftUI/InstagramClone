@@ -22,7 +22,7 @@ struct InstagramCloneApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            ContentView()
         }
     }
 }

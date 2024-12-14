@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct CompleteSignUpView: View {
+    @EnvironmentObject var viewModel: RegistrationViewModel
+    
     var body: some View {
         VStack {
             Spacer()
             
-            Text("Welcome to Instagram, sameed.ansari")
+            Text("Welcome to Instagram, \(viewModel.username)")
                 .font(.title2)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
@@ -23,7 +25,7 @@ struct CompleteSignUpView: View {
                 .multilineTextAlignment(.center)
             
             Button {
-                print("Complete signup. Move to home")
+                Task { try await viewModel.createUser() }
             } label: {
                  Text("Complete Sign Up")
                     .frame(maxWidth: .infinity)

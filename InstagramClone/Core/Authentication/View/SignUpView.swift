@@ -31,7 +31,7 @@ struct SignUpView<Destination: View>: View {
                     .modifier(IGTextFieldModifier())
             } else {
                 TextField(textField, text: $text)
-                    .textInputAutocapitalization(.none)
+                    .textInputAutocapitalization(.never)
                     .modifier(IGTextFieldModifier())
             }
             

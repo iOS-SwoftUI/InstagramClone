@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct AddEmailView: View {
-    @State private var email = ""
+    @EnvironmentObject var viewModel: RegistrationViewModel
     
     var body: some View {
         SignUpView(title: "Add your email",
                    subTitle: "You'll use this email to sign into you account",
                    textField: "Enter your email",
-                   text: $email,
+                   text: $viewModel.email,
                    destination: CreateUsernameView())
     }
 }

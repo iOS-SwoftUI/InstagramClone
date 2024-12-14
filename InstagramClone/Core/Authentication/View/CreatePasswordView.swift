@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct CreatePasswordView: View {
-    @State private var password = ""
+    @EnvironmentObject var viewModel: RegistrationViewModel
     
     var body: some View {
         SignUpView(title: "Create a password",
                    subTitle: "Your password must be at least 6 charcters in length.",
                    textField: "Password",
-                   text: $password,
+                   text: $viewModel.password,
                    destination: CompleteSignUpView())
     }
 }
