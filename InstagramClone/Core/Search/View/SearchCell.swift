@@ -12,11 +12,7 @@ struct SearchCell: View {
     
     var body: some View {
         HStack {
-            Image(user.profileImageUrl ?? "facebook_logo")
-                .resizable()
-                .scaledToFill()
-                .frame(width: 40, height: 40)
-                .clipShape(Circle())
+            CircularProfileImageView(user: user, size: .xSmall)
             
             VStack(alignment: .leading, spacing: 0) {
                 Text(user.username)

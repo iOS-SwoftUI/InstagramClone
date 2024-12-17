@@ -14,12 +14,7 @@ struct ProfileHeaderView: View {
     var body: some View {
         VStack {
             HStack {
-                Image(user.profileImageUrl ?? "")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle())
-                    .frame(maxWidth: .infinity)
+                CircularProfileImageView(user: user, size: .large)
                 
                 UserStatView(value: 3, title: "Posts")
                 UserStatView(value: 12, title: "Followers")
